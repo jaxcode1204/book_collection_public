@@ -1,0 +1,13 @@
+<h1>Update a Book</h1>
+<a href="/home/index">Return to Home</a><br />
+
+<%= form_with(model: @book, url: book_path(@book), method: :patch) do |f| %>
+  <div>
+    <%= f.label :title %><br>
+    <%= f.text_field :title, autofocus: true %>
+  </div>
+
+  <div style="margin-top:.50rem;">
+    <%= f.submit "Update Book" %>
+  </div>
+<% end %>
