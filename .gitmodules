@@ -1,0 +1,3 @@
+[submodule "book-collection"]
+	path = book-collection
+	url = https://github.com/FA25-CSCE431-software-engineering/book-collection-1-jaxcode1204.git
