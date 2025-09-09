@@ -1,0 +1,8 @@
+<h1>Delete “<%= @book.title %>”?</h1>
+<div style="display:flex; gap:.5rem;">
+  <%= link_to "Back to Home", root_path %>
+</div>
+
+<div style="display:flex; gap:.5rem;">
+  <%= button_to "Yes, delete", book_path(@book), method: :delete, form: {onsubmit: "return confirm('Are you sure?')"} %>
+</div>
