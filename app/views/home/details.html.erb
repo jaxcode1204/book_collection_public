@@ -1,0 +1,20 @@
+<h1>Book Details</h1>
+<div style="display:flex; gap:.5rem;">
+  <%= link_to "Back to Home", root_path %>
+</div>
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+<p>
+  <strong>Author:</strong>
+  <%= @book.author %>
+</p>
+<p>
+  <strong>price:</strong>
+  <%= @book.price %>
+</p>
+<p>
+  <strong>Publish Date:</strong>
+  <%= @book.publish_date %>
+</p>

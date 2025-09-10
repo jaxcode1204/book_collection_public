@@ -1,0 +1,33 @@
+<!-- app/views/home/add.html.erb -->
+<h1>Add a Book</h1>
+
+<div style="display:flex; gap:.5rem;">
+  <%= link_to "Back to Home", root_path %>
+</div>
+
+<%= form_with model: @book, url: home_add_path, method: :post do |f| %>
+  <div>
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title, id: "book_title" %>
+  </div>
+
+  <div>
+    <%= f.label :author, "Author" %>
+    <%= f.text_field :author, id: "book_author" %>
+  </div>
+
+  <div>
+    <%= f.label :price, "Price" %>
+    <%= f.number_field :price, step: 0.01, id: "book_price" %>
+  </div>
+
+  <div>
+    <%= f.label :publish_date, "Published date" %>
+    <%= f.date_select :publish_date,
+          start_year: 1900,
+          end_year: Time.zone.now.year,
+          include_blank: true %>
+  </div>
+
+  <%= f.submit "Create Book" %>
+<% end %>
