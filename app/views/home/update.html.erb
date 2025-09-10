@@ -3,8 +3,23 @@
 
 <%= form_with(model: @book, url: book_path(@book), method: :patch) do |f| %>
   <div>
-    <%= f.label :title %><br>
+    <%= f.label :title %>
     <%= f.text_field :title, autofocus: true %>
+  </div>
+  <div>
+    <%= f.label :author %>
+    <%= f.text_field :author, autofocus: true %>
+  </div>
+  <div>
+    <%= f.label :price, "Price" %>
+    <%= f.number_field :price, step: 0.01, id: "book_price" %>
+  </div>
+  <div>
+    <%= f.label :publish_date, "Published date" %>
+    <%= f.date_select :publish_date,
+        start_year: 1900,
+        end_year: Time.zone.now.year,
+        include_blank: true %>
   </div>
 
   <div style="margin-top:.50rem;">

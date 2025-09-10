@@ -2,10 +2,12 @@ Rails.application.routes.draw do
   root "home#index"
 
   get "home/index", to: "home#index", as: :home_index
-  get "home/add", to: "home#add", as: :home_add
+  match "home/add", to: "home#add", via: [:get, :post], as: :home_add
   get "home/delete/:id", to: "home#delete", as: :home_delete
   get "home/details/:id", to: "home#details", as: :home_details
   get "home/update/:id", to: "home#update", as: :home_update 
+
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
