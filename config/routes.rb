@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root "home#index"
+  resources :user_books
+  resources :users
+  resources :books
+  root to: "user_books#index"
 
   get "home/index", to: "home#index", as: :home_index
   match "home/add", to: "home#add", via: [:get, :post], as: :home_add
