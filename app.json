@@ -9,7 +9,7 @@
           "heroku-postgresql:in-dyno"
         ],
         "scripts": {
-          "postdeploy": "bundle exec rails db:schema:load"
+          "postdeploy": "bundle exec rails db:schema:load && yarn build:js && yarn build:css"
         },
         "env": {
           "RAILS_ENV": "review",
