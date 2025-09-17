@@ -5,6 +5,11 @@
     "engines": {
         "node": "16.x",
         "yarn": "1.22.x"
+    
+    },
+    "scripts": {
+        "build:js": "bin/webpack",
+        "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
     },
     "dependencies": {
         "@rails/actioncable": "^6.0.0",
@@ -17,9 +22,5 @@
     },
     "devDependencies": {
         "webpack-dev-server": "^3"
-    },
-    "scripts": {
-        "build": "webpack",
-        "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
     }
 }
